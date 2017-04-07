@@ -7,20 +7,20 @@ var wordLimit = 8;
 
 function truncateWords(originalText) {
 
-    var spText = originalText.split(" ");
+    var spText = originalText.split(" "); //Here should be splitting the original text variable into an array
 
-    spText.splice(8, 100, "...");
+    spText.splice(8, 100, "..."); //This line drops any items after 8 up to 100 and adds ... to the end
 
-    //shrtWords.push("...");
+    //shrtWords.push("..."); This was unneeded
 
-    var finWords = spText.join(" ");
+    var finWords = spText.join(" "); //this joins everything back together so it doesn't have commas after each word
 
-    return finWords;
+    return finWords; //this will return the result so the function result can be read later
 
 }
 
 
 var shortText = truncateWords(originalText, wordLimit);
-//var shortText = originalText.splice(8, numWords, "...")
+//var shortText = originalText.splice(8, numWords, "...") this idea did not work
 console.log('originalText: ' + originalText);
 console.log('shortText: ' + shortText);
