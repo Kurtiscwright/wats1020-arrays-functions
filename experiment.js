@@ -1,34 +1,26 @@
 "use strict";
 
-var originalText = "There are two hard things in Computer Science: Cach invalidation, naming things, and off-by-one errors.";
+var originalText = "There are two hard things in Computer Science: Cache invalidation, naming things, and off-by-one errors.";
 var wordLimit = 8;
 
 
 
-function truncateWords(longText, numWords) {
+function truncateWords(originalText) {
 
+    var spText = originalText.split(" ");
 
-var spText = longText.split(" ");
-console.log(spText);
+    spText.splice(8, 100, "...");
 
-var lthWords = spText.length;
-console.log(lthWords);
+    //shrtWords.push("...");
 
-var shrtWords = spText.splice(0, numWords);
-console.log(shrtWords);
+    var finWords = spText.join(" ");
 
-var numWords = lthWords - wordLimit;
-console.log(numWords);
-
-shrtWords.push("...");
-
-var finWords = spText.join(" ");
-
-return finWords;
+    return finWords;
 
 }
 
 
-var shortText = truncateWords(originalText, wordlimit);
+var shortText = truncateWords(originalText, wordLimit);
+//var shortText = originalText.splice(8, numWords, "...")
 console.log('originalText: ' + originalText);
 console.log('shortText: ' + shortText);
